@@ -1,0 +1,16 @@
+# build artifacts
+*.o
+/xcorr_mt
+
+# test data (synthetic + generated outputs)
+test/*.slc
+test/*.flt
+test/*.grd
+test/*.PRM
+test/*.dat
+test/*.log
+test/*.part.*
+
+# misc
+*.bak
+test/gmt.history

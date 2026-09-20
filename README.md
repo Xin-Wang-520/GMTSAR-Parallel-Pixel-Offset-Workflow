@@ -161,20 +161,21 @@ The preview reports resolved paths for `xcorr`, `make_a_offset.csh`,
 
 ### Source acquisition and offline installation
 
-This workflow repository includes `xcorr_mt-source` as a Git submodule pinned
-to the upstream `Jazz-0626/xcorr_mt` repository. Clone the complete workflow
-with:
+This workflow repository includes a vendored copy of `xcorr_mt` under
+`xcorr_mt-source/`. It is stored as ordinary files in this repository, so the
+working version remains available even if the upstream repository changes or
+becomes unavailable. The original upstream project is preserved here:
+<https://github.com/Jazz-0626/xcorr_mt>.
+
+Clone the complete workflow with:
 
 ```bash
-git clone --recurse-submodules \
+git clone \
   git@github.com:Xin-Wang-520/GMTSAR-Parallel-Pixel-Offset-Workflow.git
 ```
 
-If the workflow was cloned without submodules:
-
-```bash
-git submodule update --init --recursive
-```
+The bundled source is pinned to upstream commit `e12b1ee` when this workflow
+version was prepared. New upstream versions are not downloaded automatically.
 
 Run0 searches for `xcorr_mt.c` in this order:
 
@@ -633,19 +634,20 @@ GMTSAR_DEV_ROOT=/path/to/GMTSAR \
 
 ### 源码获取和离线安装
 
-本工作流把 `xcorr_mt-source` 作为 Git submodule，链接并固定到上游
-`Jazz-0626/xcorr_mt` 的对应版本。完整克隆命令：
+本工作流把 `xcorr_mt` 源码作为普通文件保存在 `xcorr_mt-source/` 中，
+因此即使上游仓库以后修改、删除或无法访问，你当前使用的版本仍然保留在
+自己的仓库里。原始上游项目链接仍然保留：
+<https://github.com/Jazz-0626/xcorr_mt>。
+
+完整克隆命令：
 
 ```bash
-git clone --recurse-submodules \
+git clone \
   git@github.com:Xin-Wang-520/GMTSAR-Parallel-Pixel-Offset-Workflow.git
 ```
 
-如果普通克隆时没有下载子模块：
-
-```bash
-git submodule update --init --recursive
-```
+本仓库内置源码对应上游提交 `e12b1ee`。以后上游有新版本时不会自动替换
+这个内置版本；如需升级，可以手动替换 `xcorr_mt-source/` 后重新提交。
 
 Run0 按以下顺序查找源码：
 
