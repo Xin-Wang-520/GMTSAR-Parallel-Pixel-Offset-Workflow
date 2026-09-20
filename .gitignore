@@ -1,0 +1,43 @@
+# Operating-system metadata
+.DS_Store
+
+# Runtime configuration and logs
+offset_run.conf
+*.log
+*.joblog
+server_config.txt
+
+# GMTSAR project data directories
+SLC/
+topo/
+intf/
+intf_all/
+raw/
+data/
+
+# SAR source data and metadata
+*.SLC
+*.PRM
+*.PRM0
+*.LED
+*.tif
+*.tiff
+*.xml
+
+# Generated grids, tables, maps, and Google Earth products
+*.grd
+*.dat
+*.xyz
+*.cpt
+*.ps
+*.pdf
+*.png
+*.kml
+*.kmz
+
+# Build and temporary files
+*.o
+build*/
+*.tmp
+*.bak
+*~
