@@ -506,7 +506,20 @@ Run from `PROJECT/offset`:
 - Range and azimuth are observation-coordinate components, not automatically
   east/north/vertical displacement.
 
-## 12. Upstream software
+## 12. Citation
+
+If this workflow contributes to your research, please cite:
+
+> Xin Wang et al. (2026). *Near instantaneously triggered Mw 5.9 aftershock
+> during the 2025 Mw 7.1 Dingri earthquake revealed by radar interferometry*.
+> **Earth and Planetary Science Letters, 686**, 120070.
+> <https://doi.org/10.1016/j.epsl.2026.120070>
+
+Article page: [ResearchGate](https://www.researchgate.net/publication/404262279_Near_instantaneously_triggered_Mw_59_aftershock_during_the_2025_Mw_71_Dingri_earthquake_revealed_by_radar_interferometry)
+
+Machine-readable citation metadata are provided in `CITATION.cff`.
+
+## 13. Upstream software
 
 - `xcorr_mt`: <https://github.com/Jazz-0626/xcorr_mt>
 - GMTSAR: <https://github.com/gmtsar/gmtsar>
@@ -953,7 +966,20 @@ offset_components/filtered/
 - 地学解释前应比较原始/滤波结果、稳定区、SNR 阈值以及升降轨观测；
 - 距离向和方位向是观测坐标分量，不会自动成为东西、南北、垂直位移。
 
-## 12. 上游软件
+## 12. 引用
+
+如果本工作流对您的研究有帮助，请引用：
+
+> Xin Wang et al. (2026). *Near instantaneously triggered Mw 5.9 aftershock
+> during the 2025 Mw 7.1 Dingri earthquake revealed by radar interferometry*.
+> **Earth and Planetary Science Letters, 686**, 120070.
+> <https://doi.org/10.1016/j.epsl.2026.120070>
+
+文章页面：[ResearchGate](https://www.researchgate.net/publication/404262279_Near_instantaneously_triggered_Mw_59_aftershock_during_the_2025_Mw_71_Dingri_earthquake_revealed_by_radar_interferometry)
+
+仓库同时提供机器可读的引用文件 `CITATION.cff`。
+
+## 13. 上游软件
 
 - `xcorr_mt`：<https://github.com/Jazz-0626/xcorr_mt>
 - GMTSAR：<https://github.com/gmtsar/gmtsar>

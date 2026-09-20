@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this workflow in your research, please cite the article below."
+title: "GMTSAR Parallel Pixel-Offset Workflow"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Xin
+    email: xinw11@mail.ustc.edu.cn
+repository-code: "https://github.com/Xin-Wang-520/GMTSAR-Parallel-Pixel-Offset-Workflow"
+date-released: 2026-09-20
+preferred-citation:
+  type: article
+  title: "Near instantaneously triggered Mw 5.9 aftershock during the 2025 Mw 7.1 Dingri earthquake revealed by radar interferometry"
+  authors:
+    - family-names: Wang
+      given-names: Xin
+    - family-names: Li
+      given-names: Duo
+    - family-names: Zhu
+      given-names: Jun
+    - family-names: Xu
+      given-names: Xiaohua
+    - family-names: Li
+      given-names: Zefeng
+    - family-names: Sandwell
+      given-names: David
+    - family-names: Hao
+      given-names: Dengcheng
+    - family-names: Liu
+      given-names: Chengli
+    - family-names: Fang
+      given-names: Rongxin
+  journal: "Earth and Planetary Science Letters"
+  volume: "686"
+  year: 2026
+  doi: "10.1016/j.epsl.2026.120070"
+  url: "https://doi.org/10.1016/j.epsl.2026.120070"

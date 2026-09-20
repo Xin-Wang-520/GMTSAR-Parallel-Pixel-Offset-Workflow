@@ -4,6 +4,8 @@
 # Affiliation: University of Science and Technology of China (USTC)
 # Contact: xinw11@mail.ustc.edu.cn
 # Purpose: Prepare an isolated GMTSAR offset-processing directory.
+# Citation: Xin Wang et al. (2026), Earth Planet. Sci. Lett. 686, 120070.
+# DOI: https://doi.org/10.1016/j.epsl.2026.120070
 
 set -euo pipefail
 
