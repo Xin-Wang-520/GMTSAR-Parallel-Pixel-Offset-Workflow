@@ -1,0 +1,3 @@
+[submodule "xcorr_mt-upstream"]
+	path = xcorr_mt-upstream
+	url = https://github.com/Jazz-0626/xcorr_mt.git

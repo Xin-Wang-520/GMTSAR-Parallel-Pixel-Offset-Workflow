@@ -57,6 +57,7 @@ fi
 
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 local_source=$script_dir/xcorr_mt-source
+upstream_source=$script_dir/xcorr_mt-upstream
 home_source=$HOME/src/xcorr_mt
 source_dir=''
 source_mode=''
@@ -66,7 +67,10 @@ if [[ -n $source_argument ]]; then
     source_mode='explicit --source-dir'
 elif [[ -f $local_source/xcorr_mt.c ]]; then
     source_dir=$local_source
-    source_mode='manually supplied beside Run0'
+    source_mode='bundled fixed source beside Run0'
+elif [[ -f $upstream_source/xcorr_mt.c ]]; then
+    source_dir=$upstream_source
+    source_mode='linked upstream Git submodule beside Run0'
 elif [[ -f $home_source/xcorr_mt.c ]]; then
     source_dir=$home_source
     source_mode='existing source under HOME/src'

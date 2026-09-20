@@ -161,27 +161,37 @@ The preview reports resolved paths for `xcorr`, `make_a_offset.csh`,
 
 ### Source acquisition and offline installation
 
-This workflow repository includes a vendored copy of `xcorr_mt` under
-`xcorr_mt-source/`. It is stored as ordinary files in this repository, so the
-working version remains available even if the upstream repository changes or
-becomes unavailable. The original upstream project is preserved here:
-<https://github.com/Jazz-0626/xcorr_mt>.
+This repository keeps `xcorr_mt` in two forms:
+
+1. `xcorr_mt-source/` is a vendored, fixed source copy stored as ordinary
+   files in this repository. It remains available if the upstream repository
+   changes or becomes unavailable, and Run0 uses it first.
+2. `xcorr_mt-upstream/` is a Git submodule linked to the original project for
+   provenance and optional upstream-version inspection.
+
+Original upstream project: <https://github.com/Jazz-0626/xcorr_mt>.
 
 Clone the complete workflow with:
 
 ```bash
-git clone \
+git clone --recurse-submodules \
   git@github.com:Xin-Wang-520/GMTSAR-Parallel-Pixel-Offset-Workflow.git
 ```
 
-The bundled source is pinned to upstream commit `e12b1ee` when this workflow
-version was prepared. New upstream versions are not downloaded automatically.
+Both copies are pinned to upstream commit `e12b1ee` when this workflow version
+was prepared. The vendored copy is never changed automatically. To initialize
+the linked folder after a normal clone, run:
+
+```bash
+git submodule update --init --recursive
+```
 
 Run0 searches for `xcorr_mt.c` in this order:
 
 1. `offset/xcorr_mt-source/xcorr_mt.c`;
-2. `$HOME/src/xcorr_mt/xcorr_mt.c`;
-3. clone <https://github.com/Jazz-0626/xcorr_mt>.
+2. `offset/xcorr_mt-upstream/xcorr_mt.c`;
+3. `$HOME/src/xcorr_mt/xcorr_mt.c`;
+4. clone <https://github.com/Jazz-0626/xcorr_mt>.
 
 If the server cannot access GitHub, download and extract the repository on
 another computer, then upload it so this file exists:
@@ -634,26 +644,35 @@ GMTSAR_DEV_ROOT=/path/to/GMTSAR \
 
 ### 源码获取和离线安装
 
-本工作流把 `xcorr_mt` 源码作为普通文件保存在 `xcorr_mt-source/` 中，
-因此即使上游仓库以后修改、删除或无法访问，你当前使用的版本仍然保留在
-自己的仓库里。原始上游项目链接仍然保留：
-<https://github.com/Jazz-0626/xcorr_mt>。
+本仓库用两种方式同时保留 `xcorr_mt`：
+
+1. `xcorr_mt-source/` 是作为普通文件提交的固定源码副本。即使上游仓库以后
+   修改、删除或无法访问，这份源码仍然保留；Run0 优先使用这一份。
+2. `xcorr_mt-upstream/` 是链接原作者项目的 Git submodule，用于保留来源关系
+   和查看上游版本。
+
+原始上游项目：<https://github.com/Jazz-0626/xcorr_mt>。
 
 完整克隆命令：
 
 ```bash
-git clone \
+git clone --recurse-submodules \
   git@github.com:Xin-Wang-520/GMTSAR-Parallel-Pixel-Offset-Workflow.git
 ```
 
-本仓库内置源码对应上游提交 `e12b1ee`。以后上游有新版本时不会自动替换
-这个内置版本；如需升级，可以手动替换 `xcorr_mt-source/` 后重新提交。
+建立本工作流时，两份源码都固定在上游提交 `e12b1ee`。内置源码不会自动
+改变。若使用普通 `git clone`，可以再初始化链接目录：
+
+```bash
+git submodule update --init --recursive
+```
 
 Run0 按以下顺序查找源码：
 
 1. `offset/xcorr_mt-source/xcorr_mt.c`；
-2. `$HOME/src/xcorr_mt/xcorr_mt.c`；
-3. 从 <https://github.com/Jazz-0626/xcorr_mt> 下载。
+2. `offset/xcorr_mt-upstream/xcorr_mt.c`；
+3. `$HOME/src/xcorr_mt/xcorr_mt.c`；
+4. 从 <https://github.com/Jazz-0626/xcorr_mt> 下载。
 
 服务器无法连接 GitHub 时，手动下载并上传，使下列文件存在：
 
